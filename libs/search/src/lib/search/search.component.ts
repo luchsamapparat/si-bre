@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Search } from './search.model';
+import { Store } from '@ngrx/store';
+import { Search } from '../search.model';
+import { searchSubmitted } from '../state/search.actions';
 
 @Component({
   selector: 'si-bre-search',
@@ -8,10 +10,12 @@ import { Search } from './search.model';
 })
 export class SearchComponent {
 
-  constructor() { }
+  constructor(
+    private store: Store<void>
+  ) { }
 
   onSearch(search: Search) {
-    console.log(search);
+    this.store.dispatch(searchSubmitted({ search }));
   }
 
 }

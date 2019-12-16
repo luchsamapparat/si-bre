@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Search } from '../search.model';
+import { Search } from '../../search.model';
 
 @Component({
   selector: 'si-bre-search-form',

@@ -8,6 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SearchModule } from '@si-bre/search';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
+import { AppEffects } from './state/app.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,7 +37,9 @@ import { AppComponent } from './app.component';
         }
       }
     ),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([
+      AppEffects
+    ]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule.forRoot({
       routerState: RouterState.Minimal

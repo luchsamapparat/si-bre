@@ -22,6 +22,9 @@
     },
     "search": {
       "tags": []
+    },
+    "routing": {
+      "tags": []
     }
   }
 }
