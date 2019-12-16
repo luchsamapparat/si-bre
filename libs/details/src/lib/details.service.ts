@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { Details } from './details.model';
 
 @Injectable({
@@ -7,7 +8,10 @@ import { Details } from './details.model';
 })
 export class DetailsService {
 
-  load(args: any): Observable<Details> {
-    return of({});
+  load(pnr: string): Observable<Details> {
+    console.log('Service')
+    return of({
+      pnr
+    }).pipe(delay(5000));
   }
 }

@@ -1,6 +1,11 @@
-import { createFeatureSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { DetailsState, DETAILS_FEATURE_KEY } from './details.reducer';
 
-const getDetailsState = createFeatureSelector<DetailsState>(
+const selectDetailsState = createFeatureSelector<DetailsState>(
   DETAILS_FEATURE_KEY
+);
+
+export const selectDetals = createSelector(
+  selectDetailsState,
+  state => state.details
 );

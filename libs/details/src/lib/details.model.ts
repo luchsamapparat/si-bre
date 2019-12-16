@@ -1,1 +1,3 @@
-export interface Details {}
+export interface Details {
+  pnr: string;
+}

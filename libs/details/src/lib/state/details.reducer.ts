@@ -1,4 +1,6 @@
-import { Action, createReducer } from '@ngrx/store';
+import { Action, createReducer, on } from '@ngrx/store';
+import { Details } from '../details.model';
+import { detailsLoaded, navigatedToDetails } from './details.actions';
 
 export const DETAILS_FEATURE_KEY = 'details';
 
@@ -6,6 +8,7 @@ export const DETAILS_FEATURE_KEY = 'details';
 export interface Entity {}
 
 export interface DetailsState {
+  details: Details | null;
 }
 
 export interface DetailsPartialState {
@@ -13,17 +16,21 @@ export interface DetailsPartialState {
 }
 
 export const initialState: DetailsState = {
+  details: null
 };
 
-const orderReducer = createReducer(
+const detailsReducer = createReducer(
   initialState,
-  // on(checkoutOrderSuccess, (state) => ({
-  //     ...state,
-  //     isCheckingOut: false,
-  //     items: []
-  // }))
+  on(navigatedToDetails, (state) => ({
+      ...state,
+      details: null
+  })),
+  on(detailsLoaded, (state, { details }) => ({
+      ...state,
+      details
+  }))
 );
 
 export function reducer(state: DetailsState | undefined, action: Action) {
-  return orderReducer(state, action);
+  return detailsReducer(state, action);
 }
