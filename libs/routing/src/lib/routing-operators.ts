@@ -18,10 +18,18 @@ export function filterNavigationTo(view: string): OperatorFunction<Action, Navig
         })
     );
 }
+
 export function extractQueryParam<T>(paramName: string, defaultValue?: T): OperatorFunction<NavigationAction, string | T> {
     return input$ => input$.pipe(
+      extractQueryParams({ [paramName]: defaultValue }),
+      map(queryParams => defaultTo(queryParams[paramName], defaultValue))
+    );
+}
+
+export function extractQueryParams<T>(defaultValue?: T): OperatorFunction<NavigationAction, T> {
+    return input$ => input$.pipe(
         map((action: NavigationAction) => defaultTo(
-            getRouterState(action).queryParams[paramName],
+            getRouterState(action).queryParams as any,
             defaultValue
         ))
     );

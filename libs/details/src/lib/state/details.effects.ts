@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect } from '@ngrx/effects';
-import { filterNavigationTo } from '@si-bre/routing';
-import { map } from 'rxjs/operators';
+import { extractQueryParams, filterNavigationTo } from '@si-bre/routing';
+import { Search } from '@si-bre/search';
+import { map, switchMap } from 'rxjs/operators';
+import { DetailsService } from '../details.service';
+import { detailsLoaded } from './details.actions';
 
 @Injectable()
 export class DetailsEffects {
@@ -9,12 +12,15 @@ export class DetailsEffects {
   loadDetails$ = createEffect(
     () => this.actions$.pipe(
       filterNavigationTo('details'),
-      map(() => console.log('LOAD DETAILS'))
+      extractQueryParams<Search>(),
+      switchMap(({ pnr }) => this.detailsService.load(pnr).pipe(
+        map(details => detailsLoaded({ details }))
+      ))
     ),
-    { dispatch: false }
   );
 
   constructor(
     private actions$: Actions,
+    private detailsService: DetailsService
   ) { }
 }
