@@ -1,0 +1,18 @@
+{
+  "npmScope": "si-bre",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "bre-e2e": {
+      "tags": []
+    },
+    "bre": {
+      "tags": []
+    }
+  }
+}
