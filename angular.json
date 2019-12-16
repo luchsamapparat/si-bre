@@ -120,6 +120,99 @@
           }
         }
       }
+    },
+    "overview": {
+      "projectType": "library",
+      "root": "libs/overview",
+      "sourceRoot": "libs/overview/src",
+      "prefix": "si-bre",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/overview/tsconfig.lib.json",
+              "libs/overview/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/overview/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/overview/jest.config.js",
+            "tsConfig": "libs/overview/tsconfig.spec.json",
+            "setupFile": "libs/overview/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "details": {
+      "projectType": "library",
+      "root": "libs/details",
+      "sourceRoot": "libs/details/src",
+      "prefix": "si-bre",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/details/tsconfig.lib.json",
+              "libs/details/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/details/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/details/jest.config.js",
+            "tsConfig": "libs/details/tsconfig.spec.json",
+            "setupFile": "libs/details/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "search": {
+      "projectType": "library",
+      "root": "libs/search",
+      "sourceRoot": "libs/search/src",
+      "prefix": "si-bre",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/search/tsconfig.lib.json",
+              "libs/search/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/search/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/search/jest.config.js",
+            "tsConfig": "libs/search/tsconfig.spec.json",
+            "setupFile": "libs/search/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

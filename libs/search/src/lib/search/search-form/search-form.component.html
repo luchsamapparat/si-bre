@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+
+  <input type="text" formControlName="vnr" />
+  <input type="text" formControlName="rinr" />
+  <input type="text" formControlName="breJahr" />
+  <input type="text" formControlName="pnr" />
+
+  <button>Suche</button>
+
+</form>

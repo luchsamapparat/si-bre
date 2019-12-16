@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@si-bre/overview": ["libs/overview/src/index.ts"],
+      "@si-bre/details": ["libs/details/src/index.ts"],
+      "@si-bre/search": ["libs/search/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
