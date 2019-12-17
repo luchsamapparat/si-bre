@@ -13,7 +13,7 @@ import { selectDetails } from '../state/details.selectors';
 })
 export class DetailsComponent {
 
-  details: Observable<Details>;
+  details$: Observable<Details>;
 
   startActions = [navigatedToDetails];
   endActions = [detailsLoaded];
@@ -21,7 +21,7 @@ export class DetailsComponent {
   constructor(
     private store: Store<DetailsPartialState>
   ) {
-    this.details = this.store.select(selectDetails);
+    this.details$ = this.store.select(selectDetails);
   }
 
 }

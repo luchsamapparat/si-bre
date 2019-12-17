@@ -1,4 +1,7 @@
-<pre>{{ details | async | json }}</pre>
+<si-bre-details-header
+  [details]="details$ |async"
+></si-bre-details-header>
+
 <si-bre-spinner
   spinnerName="foo"
 ></si-bre-spinner>

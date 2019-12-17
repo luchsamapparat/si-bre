@@ -8,6 +8,7 @@ import { DetailsComponent } from './details/details.component';
 import { detailsLoaded, navigatedToDetails } from './state/details.actions';
 import { DetailsEffects } from './state/details.effects';
 import { DETAILS_FEATURE_KEY, reducer } from './state/details.reducer';
+import { DetailsHeaderComponent } from './details-header/details-header.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,6 @@ import { DETAILS_FEATURE_KEY, reducer } from './state/details.reducer';
       }
     })
   ],
-  declarations: [DetailsComponent]
+  declarations: [DetailsComponent, DetailsHeaderComponent]
 })
 export class DetailsModule {}
