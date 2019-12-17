@@ -4,9 +4,6 @@ import { detailsLoaded, navigatedToDetails } from './details.actions';
 
 export const DETAILS_FEATURE_KEY = 'details';
 
-/* tslint:disable:no-empty-interface */
-export interface Entity {}
-
 export interface DetailsState {
   details: Details | null;
 }

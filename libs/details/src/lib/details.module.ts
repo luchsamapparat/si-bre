@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { UiModule } from '@si-bre/ui';
 import { DetailsComponent } from './details/details.component';
+import { detailsLoaded, navigatedToDetails } from './state/details.actions';
 import { DetailsEffects } from './state/details.effects';
 import { DETAILS_FEATURE_KEY, reducer } from './state/details.reducer';
 
@@ -25,7 +27,13 @@ import { DETAILS_FEATURE_KEY, reducer } from './state/details.reducer';
       DETAILS_FEATURE_KEY,
       reducer
     ),
-    EffectsModule.forFeature([DetailsEffects])
+    EffectsModule.forFeature([DetailsEffects]),
+    UiModule.forFeature({
+      foo: {
+        startActions: [navigatedToDetails],
+        endActions: [detailsLoaded]
+      }
+    })
   ],
   declarations: [DetailsComponent]
 })

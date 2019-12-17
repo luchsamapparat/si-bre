@@ -5,7 +5,7 @@ const selectDetailsState = createFeatureSelector<DetailsState>(
   DETAILS_FEATURE_KEY
 );
 
-export const selectDetals = createSelector(
+export const selectDetails = createSelector(
   selectDetailsState,
   state => state.details
 );
