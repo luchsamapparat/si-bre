@@ -22,13 +22,13 @@ import { reducer, SPINNER_FEATURE_KEY } from './state/spinner.reducer';
 })
 export class UiModule {
 
-  static forFeature(spinnerConfig: SpinnerConfig): ModuleWithProviders {
+  static forFeature(spinnerConfigFactory: () => SpinnerConfig): ModuleWithProviders<UiModule> {
     return {
       ngModule: UiModule,
       providers: [
         {
           provide: SPINNER_CONFIG,
-          useValue: spinnerConfig,
+          useFactory: spinnerConfigFactory,
           multi: true
         }
       ]

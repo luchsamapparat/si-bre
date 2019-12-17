@@ -4,11 +4,20 @@ import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { UiModule } from '@si-bre/ui';
+import { DetailsHeaderComponent } from './details-header/details-header.component';
 import { DetailsComponent } from './details/details.component';
 import { detailsLoaded, navigatedToDetails } from './state/details.actions';
 import { DetailsEffects } from './state/details.effects';
 import { DETAILS_FEATURE_KEY, reducer } from './state/details.reducer';
-import { DetailsHeaderComponent } from './details-header/details-header.component';
+
+export function spinnerConfigFactory() {
+  return {
+    foo: {
+      startActions: [navigatedToDetails],
+      endActions: [detailsLoaded]
+    }
+  };
+}
 
 @NgModule({
   imports: [
@@ -29,12 +38,7 @@ import { DetailsHeaderComponent } from './details-header/details-header.componen
       reducer
     ),
     EffectsModule.forFeature([DetailsEffects]),
-    UiModule.forFeature({
-      foo: {
-        startActions: [navigatedToDetails],
-        endActions: [detailsLoaded]
-      }
-    })
+    UiModule.forFeature(spinnerConfigFactory)
   ],
   declarations: [DetailsComponent, DetailsHeaderComponent]
 })
