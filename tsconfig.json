@@ -20,7 +20,8 @@
       "@si-bre/details": ["libs/details/src/index.ts"],
       "@si-bre/search": ["libs/search/src/index.ts"],
       "@si-bre/routing": ["libs/routing/src/index.ts"],
-      "@si-bre/ui": ["libs/ui/src/index.ts"]
+      "@si-bre/ui": ["libs/ui/src/index.ts"],
+      "@si-bre/ui/test": ["libs/ui/src/test/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
