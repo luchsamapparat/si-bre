@@ -20,9 +20,14 @@
             "main": "apps/bre/src/main.ts",
             "polyfills": "apps/bre/src/polyfills.ts",
             "tsConfig": "apps/bre/tsconfig.app.json",
-            "aot": false,
-            "assets": ["apps/bre/src/favicon.ico", "apps/bre/src/assets"],
-            "styles": ["apps/bre/src/styles.scss"],
+            "aot": true,
+            "assets": [
+              "apps/bre/src/favicon.ico",
+              "apps/bre/src/assets"
+            ],
+            "styles": [
+              "apps/bre/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -38,7 +43,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -81,7 +85,10 @@
               "apps/bre/tsconfig.app.json",
               "apps/bre/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/bre/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/bre/**"
+            ]
           }
         },
         "test": {
@@ -115,8 +122,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/bre-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/bre-e2e/**"]
+            "tsConfig": [
+              "apps/bre-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/bre-e2e/**"
+            ]
           }
         }
       }
@@ -134,7 +146,10 @@
               "libs/overview/tsconfig.lib.json",
               "libs/overview/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/overview/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/overview/**"
+            ]
           }
         },
         "test": {
@@ -165,7 +180,10 @@
               "libs/details/tsconfig.lib.json",
               "libs/details/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/details/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/details/**"
+            ]
           }
         },
         "test": {
@@ -196,7 +214,10 @@
               "libs/search/tsconfig.lib.json",
               "libs/search/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/search/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/search/**"
+            ]
           }
         },
         "test": {
@@ -227,7 +248,10 @@
               "libs/routing/tsconfig.lib.json",
               "libs/routing/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/routing/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/routing/**"
+            ]
           }
         },
         "test": {
@@ -258,7 +282,10 @@
               "libs/ui/tsconfig.lib.json",
               "libs/ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ui/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui/**"
+            ]
           }
         },
         "test": {
@@ -278,7 +305,8 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "12eae41b-204f-4c23-b0d6-ccc46ec99e6b"
   },
   "schematics": {
     "@nrwl/angular:application": {
